@@ -1,22 +1,31 @@
 # mohankolli.exe
 
-Personal portfolio for Mohan Kolli — Application & AI Security Engineer. Static site, no
-framework, no build step, no trackers. Content lives directly in the HTML so it works with
-JavaScript disabled; `assets/js/site.js` only adds the typing effect and scroll-reveal.
+Interactive terminal portfolio for Mohan Kolli — AI & Application Security Engineer.
+A boot-up, a prompt, and commands you type (or tap) to explore the work: `whoami`,
+`ls`, `open themis`, `resume`, `contact`.
 
-## Pages
-- `index.html` — intro, what I do, featured work, contact
-- `work.html` — projects
-- `about.html` — story, experience, skills, credentials
-- `resume.html` — embedded + downloadable PDF (`assets/resume/mohan-kolli-resume.pdf`)
+Built with Next.js (App Router) + React, exported as a fully static site and deployed
+to GitHub Pages at <https://mohankolli9999.github.io>. No server, no trackers.
 
-## Local preview
-```
-python3 -m http.server 8000
-# open http://localhost:8000
+## Develop
+
+```bash
+npm install
+npm run dev        # http://localhost:3000
 ```
 
-## Deploy (GitHub Pages)
-Create a public repo named `mohankolli9999.github.io`, push these files to `main`, and enable
-Pages (Settings → Pages → Branch: `main`). Live at `https://mohankolli9999.github.io` within a
-minute. `.nojekyll` keeps Pages from processing `assets/`.
+## Build (static export)
+
+```bash
+npm run build      # outputs ./out
+```
+
+## Deploy
+
+Push to `main`. The workflow in `.github/workflows/deploy.yml` builds the static export
+and publishes it to GitHub Pages automatically.
+
+## Content
+
+All content lives in `lib/content.ts` (single source of truth). The resume PDF is in
+`public/resume/`.

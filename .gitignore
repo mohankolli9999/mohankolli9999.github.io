@@ -1,2 +1,12 @@
+# deps
+/node_modules
+
+# next
+/.next
+/out
+next-env.d.ts
+
+# misc
 .DS_Store
 .gstack/
+*.tsbuildinfo
